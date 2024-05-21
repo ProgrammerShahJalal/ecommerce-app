@@ -10,6 +10,10 @@ This is an Product and Order Management System application built with Node.js, E
 <li>Mongooes</li>
 <li>TypeScript</li>
 <li>Zod Validation</li>
+<li>cors</li>
+<li>dotenv</li>
+<li>eslint</li>
+<li>nodemon</li>
 
 ## Features
 
@@ -43,3 +47,5 @@ This is an Product and Order Management System application built with Node.js, E
 1. Start the development server:
    `npm run start:dev`
    The server will start running on http://localhost:5000.
+
+All rights reserved by Md Shah Jalal.
