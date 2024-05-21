@@ -21,7 +21,7 @@ export const ProductServices = {
     });
   },
 
-  deleteProductFromDB: async (name: string) => {
-    return await Product.findOneAndDelete({ name });
+  deleteProductById: async (productId: string) => {
+    return await Product.findByIdAndDelete(productId);
   },
 };
