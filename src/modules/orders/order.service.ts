@@ -6,4 +6,12 @@ export const OrderServices = {
     const order = new Order(orderData);
     return await order.save();
   },
+
+  getAllOrdersFromDB: async () => {
+    return await Order.find();
+  },
+
+  getOrdersByEmailFromDB: async (email: string) => {
+    return await Order.find({ email });
+  },
 };
