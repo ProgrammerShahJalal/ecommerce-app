@@ -15,6 +15,12 @@ export const ProductServices = {
     return await Product.findById(productId);
   },
 
+  updateProductById: async (productId: string, updatedData: TProduct) => {
+    return await Product.findByIdAndUpdate(productId, updatedData, {
+      new: true,
+    });
+  },
+
   deleteProductFromDB: async (name: string) => {
     return await Product.findOneAndDelete({ name });
   },
