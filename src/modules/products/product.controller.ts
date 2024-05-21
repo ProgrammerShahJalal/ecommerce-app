@@ -43,11 +43,11 @@ const getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
-const getProductByName = async (req: Request, res: Response) => {
+const getProductById = async (req: Request, res: Response) => {
   try {
-    const { name } = req.params;
+    const { productId } = req.params;
 
-    const result = await ProductServices.getProductByNameFromDB(name);
+    const result = await ProductServices.getProductByIdFromDB(productId);
 
     res.status(200).json({
       success: true,
@@ -86,6 +86,6 @@ const deleteProduct = async (req: Request, res: Response) => {
 export const ProductControllers = {
   createProduct,
   getAllProducts,
-  getProductByName,
+  getProductById,
   deleteProduct,
 };

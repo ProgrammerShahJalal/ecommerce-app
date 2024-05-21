@@ -11,8 +11,8 @@ export const ProductServices = {
     return await Product.find();
   },
 
-  getProductByNameFromDB: async (name: string) => {
-    return await Product.findProductByName(name);
+  getProductByIdFromDB: async (productId: string) => {
+    return await Product.findById(productId);
   },
 
   deleteProductFromDB: async (name: string) => {

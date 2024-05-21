@@ -37,9 +37,9 @@ function arrayLimit(val: string[]) {
   return val.length <= 10;
 }
 
-// Static method to find product by name
-productSchema.statics.findProductByName = function (name: string) {
-  return this.findOne({ name });
+// Static method to find product by ID
+productSchema.statics.findProductById = function (productId: string) {
+  return this.findById(productId);
 };
 
 const Product = model<TProduct, ProductModel>("Product", productSchema);
