@@ -13,7 +13,7 @@ const createProduct = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Product created successfully!",
+      message: "Product is created successfully",
       data: result,
     });
   } catch (err: any) {
@@ -31,7 +31,7 @@ const getAllProducts = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Products retrieved successfully!",
+      message: "Products are retrieved successfully",
       data: result,
     });
   } catch (err: any) {
@@ -51,7 +51,7 @@ const getProductByName = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Product retrieved successfully!",
+      message: "Product is retrieved successfully",
       data: result,
     });
   } catch (err: any) {
@@ -71,7 +71,7 @@ const deleteProduct = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Product deleted successfully!",
+      message: "Product is deleted successfully",
       data: result,
     });
   } catch (err: any) {
