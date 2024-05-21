@@ -24,4 +24,9 @@ export const ProductServices = {
   deleteProductById: async (productId: string) => {
     return await Product.findByIdAndDelete(productId);
   },
+  searchProductsByName: async (searchTerm: string) => {
+    return await Product.find({
+      name: { $regex: new RegExp(searchTerm, "i") },
+    });
+  },
 };
