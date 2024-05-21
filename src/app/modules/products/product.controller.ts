@@ -16,11 +16,12 @@ const createProduct = async (req: Request, res: Response) => {
       message: "Product is created successfully",
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
+    const error = err as Error;
     res.status(500).json({
       success: false,
-      message: err.message || "Something went wrong",
-      error: err,
+      message: error.message || "Something went wrong",
+      error: error,
     });
   }
 };
@@ -45,11 +46,12 @@ const getAllProducts = async (req: Request, res: Response) => {
         data: result,
       });
     }
-  } catch (err: any) {
+  } catch (err) {
+    const error = err as Error;
     res.status(500).json({
       success: false,
-      message: err.message || "Something went wrong",
-      error: err,
+      message: error.message || "Something went wrong",
+      error: error,
     });
   }
 };
@@ -71,11 +73,12 @@ const getProductById = async (req: Request, res: Response) => {
       message: "Product is retrieved successfully",
       data: result,
     });
-  } catch (err: any) {
+  } catch (err) {
+    const error = err as Error;
     res.status(500).json({
       success: false,
-      message: err.message || "Something went wrong",
-      error: err,
+      message: error.message || "Something went wrong",
+      error: error,
     });
   }
 };
@@ -102,11 +105,12 @@ const updateProduct = async (req: Request, res: Response) => {
       message: "Product updated successfully!",
       data: updatedProduct,
     });
-  } catch (err: any) {
+  } catch (err) {
+    const error = err as Error;
     res.status(500).json({
       success: false,
-      message: err.message || "Something went wrong",
-      error: err,
+      message: error.message || "Something went wrong",
+      error: error,
     });
   }
 };
@@ -129,11 +133,12 @@ const deleteProduct = async (req: Request, res: Response) => {
       message: "Product deleted successfully!",
       data: null,
     });
-  } catch (err: any) {
+  } catch (err) {
+    const error = err as Error;
     res.status(500).json({
       success: false,
-      message: err.message || "Something went wrong",
-      error: err,
+      message: error.message || "Something went wrong",
+      error: error,
     });
   }
 };
