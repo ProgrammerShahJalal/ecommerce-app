@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { OrderServices } from "./order.service";
 import { orderSchema } from "./order.validation";
 import { TOrder } from "./order.interface";
+import { ProductServices } from "../products/product.service";
 
 const createOrder = async (req: Request, res: Response) => {
   try {
@@ -12,6 +13,17 @@ const createOrder = async (req: Request, res: Response) => {
 
     // Assert type to TOrder
     const validatedOrderData = zodParsedData as TOrder;
+
+    // Check if product exists
+    const product = await ProductServices.getProductByIdFromDB(
+      validatedOrderData.productId
+    );
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        message: "Product not found",
+      });
+    }
 
     const result = await OrderServices.createOrder(validatedOrderData);
     res.status(200).json({
